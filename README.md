@@ -32,5 +32,3 @@ Built with **Next.js**, **Tailwind CSS**, and integrated with **Stripe** for bil
 | Image Upload | UploadThing / Next.js API routes                                              |
 
 ---
-
-## 🏗️ Project Structure
