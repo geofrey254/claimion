@@ -19,7 +19,7 @@ function Hero() {
               easily.
             </p>
             <Link
-              href="/start-claim"
+              href="/claim"
               className="bg-[#f9463a] hover:bg-red-600 text-white font-bold py-3 px-8 rounded-md transition-all transform hover:scale-105 shadow-lg"
             >
               Start Your Claim

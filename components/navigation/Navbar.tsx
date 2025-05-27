@@ -53,8 +53,8 @@ const Navbar = () => {
               <Image
                 src="/logo.png"
                 alt="Logo"
-                width={120}
-                height={120}
+                width={140}
+                height={140}
                 className="mr-2"
               />
             </Link>
