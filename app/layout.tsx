@@ -30,8 +30,6 @@ export const metadata: Metadata = {
     "SaaS for insurance",
     "fast claims processing",
   ],
-  authors: [{ name: "Claimion Team", url: "https://claimion.ai" }],
-  creator: "Claimion Inc.",
   applicationName: "Claimion",
 };
 
