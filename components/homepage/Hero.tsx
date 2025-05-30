@@ -4,13 +4,12 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-bl from-[#0a4586] via-[#0a4586] to-[#f9463a] flex items-center justify-center md:mt-20">
-      <div className="max-w-4xl w-full text-white rounded-lg shadow-xl overflow-hidden border-2 border-white">
+    <section className="w-full min-h-screen bg-gradient-to-bl from-[#0a4586] via-[#0a4586] to-[#f9463a] flex items-center justify-center pt-16 md:pt-32 md:pb-20 px-4">
+      <div className="max-w-5xl w-full text-white rounded-lg shadow-xl overflow-hidden border-2 border-white">
         <div className="p-8 md:p-12 flex flex-col md:flex-row items-center">
           <div className="flex-1 mb-8 md:mb-0">
             <div className="flex items-center mb-4">
-              <Camera size={32} className="mr-3 text-[#f9463a]" />
-              <h1 className="text-2xl md:text-3xl font-bold">
+              <h1 className="text-2xl md:text-5xl font-bold">
                 Quick, Guided Vehicle Damage Reporting
               </h1>
             </div>
