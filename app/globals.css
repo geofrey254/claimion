@@ -122,8 +122,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-
-body {
-  font-family: 'Montserrat', sans-serif;
-}

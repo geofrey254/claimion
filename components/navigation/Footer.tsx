@@ -4,10 +4,15 @@ import { useState } from "react";
 import {
   Mail,
   Phone,
-  ArrowRight,
   ChevronUp,
   Send,
   AlertCircle,
+  Brain,
+  Shield,
+  Zap,
+  Camera,
+  Award,
+  Globe,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -116,26 +121,47 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="relative z-10">
-            <h3 className="text-2xl font-bold mb-8 relative inline-block">
-              Quick Links
-              <span className="bg-[#f9463a] w-12 h-1 absolute -bottom-3 left-0 rounded-full"></span>
+          <div>
+            <h3 className="text-xl font-bold mb-6 relative inline-block">
+              <Brain className="w-5 h-5 text-[#f9463a] mr-2 inline" />
+              AI Solutions
+              <span className="bg-gradient-to-r from-[#f9463a] to-transparent w-16 h-0.5 absolute -bottom-2 left-0"></span>
             </h3>
-            <ul className="grid grid-cols-2 gap-4 mt-2">
+            <ul className="space-y-4">
               {[
-                { href: "/solutions", label: "Solutions" },
-                { href: "/about-us", label: "About Us" },
-                { href: "/blog", label: "Blog" },
-                { href: "/contact-us", label: "Contact Us" },
+                {
+                  href: "/damage-detection",
+                  label: "Damage Detection",
+                  icon: Camera,
+                },
+                {
+                  href: "/instant-analysis",
+                  label: "Instant Analysis",
+                  icon: Zap,
+                },
+                {
+                  href: "/accuracy-reports",
+                  label: "Accuracy Reports",
+                  icon: Shield,
+                },
+                {
+                  href: "/api-integration",
+                  label: "API Integration",
+                  icon: Globe,
+                },
+                {
+                  href: "/enterprise",
+                  label: "Enterprise Solutions",
+                  icon: Award,
+                },
               ].map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
                     className="text-gray-300 hover:text-[#f9463a] flex items-center group transition-all duration-300"
                   >
-                    <div className="bg-[#f9463a] bg-opacity-0 group-hover:bg-opacity-20 p-1 rounded-full mr-3 transition-all duration-300">
-                      <ArrowRight className="h-4 w-4 text-[#f9463a] transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <div className="bg-[#f9463a]/0 group-hover:bg-[#f9463a]/20 p-2 rounded-full mr-3 transition-all duration-300">
+                      <link.icon className="h-4 w-4 text-[#f9463a]" />
                     </div>
                     <span className="border-b border-transparent group-hover:border-[#f9463a] pb-1 transition-all">
                       {link.label}
@@ -145,7 +171,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           {/* Newsletter */}
           <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-8 relative inline-block">
@@ -206,7 +231,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white border-opacity-10 flex justify-center items-center">
           <p className="text-white/80 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Cynit Tech. All rights reserved.
+            &copy; {new Date().getFullYear()} Claimion Tech. Powered by{" "}
+            <span className="text-[#f9463a] font-bold">Cynit.</span>
           </p>
         </div>
       </div>

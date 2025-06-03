@@ -64,7 +64,7 @@ export default function FeaturesGrid() {
             Powerful Features
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Everything You Need for
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0a4586] to-[#f9463a]">
               Perfect Claims
