@@ -39,7 +39,7 @@ function FinalCTABanner() {
 
           <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
             Join thousands of professionals who trust our platform for faster,
-            more accurate vehicle damage assessments.
+            more accurate vehicle damage assessment.
           </p>
         </div>
 
