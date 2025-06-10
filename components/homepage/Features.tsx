@@ -3,12 +3,13 @@ import {
   Zap,
   Shield,
   CheckCircle,
-  Users,
   FileText,
   BarChart,
   Smartphone,
   Globe,
+  Play,
 } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function FeaturesGrid() {
@@ -136,15 +137,21 @@ export default function FeaturesGrid() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-[#0a4586] to-blue-700 hover:from-[#0a4586]/90 hover:to-blue-700/90 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center">
+            <Link
+              href="#"
+              className="bg-gradient-to-r from-[#0a4586] to-blue-700 hover:from-[#0a4586]/90 hover:to-blue-700/90 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center"
+            >
               Start Free Trial
               <Zap className="ml-2 w-5 h-5" />
-            </button>
+            </Link>
 
-            <button className="border-2 border-[#0a4586] hover:bg-[#0a4586] hover:text-white text-[#0a4586] px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:scale-105 flex items-center">
-              <Users className="mr-2 w-5 h-5" />
-              Schedule Demo
-            </button>
+            <Link
+              href="#"
+              className="border-2 border-[#0a4586] hover:bg-[#0a4586] hover:text-white text-[#0a4586] px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:scale-105 flex items-center"
+            >
+              <Play className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
+              <span>Watch Demo</span>
+            </Link>
           </div>
 
           {/* Trust indicators */}
