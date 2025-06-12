@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Camera, X, RotateCcw, Check } from "lucide-react";
+import Image from "next/image";
 
 export default function CameraModal({ onCapture, onClose, photoType }) {
   const videoRef = useRef(null);
@@ -21,7 +22,7 @@ export default function CameraModal({ onCapture, onClose, photoType }) {
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
         video: {
-          facingMode: "environment", // Use back camera on mobile
+          facingMode: "environment",
           width: { ideal: 1280 },
           height: { ideal: 720 },
         },
@@ -108,7 +109,9 @@ export default function CameraModal({ onCapture, onClose, photoType }) {
             <div className="space-y-4">
               <div className="relative bg-gray-100 rounded-lg overflow-hidden aspect-video">
                 {capturedImage ? (
-                  <img
+                  <Image
+                    width={1280}
+                    height={720}
                     src={capturedImage}
                     alt="Captured"
                     className="w-full h-full object-cover"

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import StepIndicator from "./StepIndicator";
 import PersonalInfo from "./PersonalInfo";
 import IncidentDetails from "./IncidentDetails";
@@ -23,16 +23,18 @@ export default function ClaimSection() {
     location: "",
     description: "",
   });
-  const [capturedPhotos, setCapturedPhotos] = useState({});
+  const [capturedPhotos, setCapturedPhotos] = useState<{
+    [key: string]: string;
+  }>({});
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
     }));
   };
 
-  const canProceedToNext = (step) => {
+  const canProceedToNext = (step: number) => {
     switch (step) {
       case 1:
         return (
@@ -64,7 +66,6 @@ export default function ClaimSection() {
   };
 
   const handleSubmit = () => {
-    // Handle final submission
     alert(
       "Claim submitted successfully! You will receive a confirmation email shortly."
     );

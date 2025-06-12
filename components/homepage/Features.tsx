@@ -110,66 +110,6 @@ export default function FeaturesGrid() {
             );
           })}
         </div>
-
-        {/* Bottom CTA Section */}
-        <div className="text-center bg-gradient-to-r from-gray-50 to-white rounded-3xl p-8 md:p-12 border-2 border-gray-100">
-          <div className="flex justify-center items-center mb-6">
-            <div className="flex -space-x-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#0a4586] to-blue-700 rounded-full flex items-center justify-center shadow-lg">
-                <Camera className="w-6 h-6 text-white" />
-              </div>
-              <div className="w-12 h-12 bg-gradient-to-br from-[#f9463a] to-red-500 rounded-full flex items-center justify-center shadow-lg">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg">
-                <Shield className="w-6 h-6 text-white" />
-              </div>
-            </div>
-          </div>
-
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Transform Your Claims Process?
-          </h3>
-
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join 500+ insurers already using Claimion to process claims faster,
-            more accurately, and at a fraction of the cost.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="#"
-              className="bg-gradient-to-r from-[#0a4586] to-blue-700 hover:from-[#0a4586]/90 hover:to-blue-700/90 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center"
-            >
-              Start Free Trial
-              <Zap className="ml-2 w-5 h-5" />
-            </Link>
-
-            <Link
-              href="#"
-              className="border-2 border-[#0a4586] hover:bg-[#0a4586] hover:text-white text-[#0a4586] px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:scale-105 flex items-center"
-            >
-              <Play className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
-              <span>Watch Demo</span>
-            </Link>
-          </div>
-
-          {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 text-gray-500 text-sm mt-8">
-            <div className="flex items-center">
-              <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
-              No Setup Required
-            </div>
-            <div className="flex items-center">
-              <Shield className="w-4 h-4 mr-2 text-[#0a4586]" />
-              Enterprise Ready
-            </div>
-            <div className="flex items-center">
-              <Globe className="w-4 h-4 mr-2 text-[#f9463a]" />
-              24/7 Support
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

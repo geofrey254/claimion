@@ -1,11 +1,30 @@
 import React, { useState, useRef } from "react";
 import { Camera, Upload, CheckCircle, X, Car, CreditCard } from "lucide-react";
 import CameraModal from "./CameraModal";
+import Image from "next/image";
 
-export default function PhotoCapture({ capturedPhotos, setCapturedPhotos }) {
-  const [currentPhotoType, setCurrentPhotoType] = useState(null);
+type CapturedPhoto = {
+  file: File;
+  preview: string;
+  timestamp: string;
+};
+
+type CapturedPhotos = {
+  [key: string]: CapturedPhoto;
+};
+
+interface PhotoCaptureProps {
+  capturedPhotos: CapturedPhotos;
+  setCapturedPhotos: React.Dispatch<React.SetStateAction<CapturedPhotos>>;
+}
+
+export default function PhotoCapture({
+  capturedPhotos,
+  setCapturedPhotos,
+}: PhotoCaptureProps) {
+  const [currentPhotoType, setCurrentPhotoType] = useState<string | null>(null);
   const [showCameraModal, setShowCameraModal] = useState(false);
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const photoRequirements = [
     {
@@ -52,7 +71,10 @@ export default function PhotoCapture({ capturedPhotos, setCapturedPhotos }) {
     },
   ];
 
-  const handlePhotoCapture = (photoType, method) => {
+  const handlePhotoCapture = (
+    photoType: string,
+    method: "camera" | "upload"
+  ) => {
     setCurrentPhotoType(photoType);
     if (method === "camera") {
       setShowCameraModal(true);
@@ -61,29 +83,31 @@ export default function PhotoCapture({ capturedPhotos, setCapturedPhotos }) {
     }
   };
 
-  const handleFileSelect = (event) => {
-    const file = event.target.files[0];
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files && event.target.files[0];
     if (file && currentPhotoType) {
       processPhoto(file);
     }
   };
 
-  const processPhoto = (file) => {
+  const processPhoto = (file: File) => {
     const reader = new FileReader();
     reader.onload = (e) => {
-      setCapturedPhotos((prev) => ({
-        ...prev,
-        [currentPhotoType]: {
-          file,
-          preview: e.target.result,
-          timestamp: new Date().toISOString(),
-        },
-      }));
+      if (currentPhotoType) {
+        setCapturedPhotos((prev) => ({
+          ...prev,
+          [currentPhotoType]: {
+            file,
+            preview: e.target?.result as string,
+            timestamp: new Date().toISOString(),
+          },
+        }));
+      }
     };
     reader.readAsDataURL(file);
   };
 
-  const handleCameraCapture = (imageData) => {
+  const handleCameraCapture = (imageData: string) => {
     // Convert base64 to file object
     fetch(imageData)
       .then((res) => res.blob())
@@ -96,7 +120,7 @@ export default function PhotoCapture({ capturedPhotos, setCapturedPhotos }) {
     setShowCameraModal(false);
   };
 
-  const removePhoto = (photoType) => {
+  const removePhoto = (photoType: string) => {
     setCapturedPhotos((prev) => {
       const updated = { ...prev };
       delete updated[photoType];
@@ -153,7 +177,9 @@ export default function PhotoCapture({ capturedPhotos, setCapturedPhotos }) {
               <div className="text-center">
                 {photo ? (
                   <div className="mb-4">
-                    <img
+                    <Image
+                      width={320}
+                      height={180}
                       src={photo.preview}
                       alt={req.title}
                       className="w-full h-32 object-cover rounded-lg mb-2"

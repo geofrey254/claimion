@@ -7,8 +7,34 @@ import {
   Car,
   CreditCard,
 } from "lucide-react";
+import Image from "next/image";
 
-export default function ReviewSubmit({ formData, capturedPhotos }) {
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  policyNumber: string;
+  incidentDate: string;
+  incidentTime: string;
+  location: string;
+  description: string;
+}
+
+interface CapturedPhoto {
+  preview: string;
+  // add other properties if needed
+}
+
+interface ReviewSubmitProps {
+  formData: FormData;
+  capturedPhotos: Record<string, CapturedPhoto>;
+}
+
+export default function ReviewSubmit({
+  formData,
+  capturedPhotos,
+}: ReviewSubmitProps) {
   const photoRequirements = [
     { id: "front", title: "Front Damage", icon: Car },
     { id: "rear", title: "Rear Damage", icon: Car },
@@ -94,9 +120,11 @@ export default function ReviewSubmit({ formData, capturedPhotos }) {
               const req = photoRequirements.find((r) => r.id === type);
               return (
                 <div key={type} className="text-center">
-                  <img
+                  <Image
+                    width={320}
+                    height={180}
                     src={photo.preview}
-                    alt={req?.title}
+                    alt={req?.title || "Uploaded photo"}
                     className="w-full h-20 object-cover rounded-lg mb-1"
                   />
                   <p className="text-xs text-gray-600">{req?.title}</p>
@@ -115,7 +143,7 @@ export default function ReviewSubmit({ formData, capturedPhotos }) {
               </h4>
               <p className="text-blue-700 text-sm">
                 Your claim will be securely transmitted and processed by our AI
-                system. You'll receive a confirmation email and claim number
+                system. You{"'"}ll receive a confirmation email and claim number
                 within minutes.
               </p>
             </div>

@@ -1,7 +1,11 @@
 import React from "react";
 import { CheckCircle } from "lucide-react";
 
-export default function StepIndicator({ currentStep }) {
+interface StepIndicatorProps {
+  currentStep: number;
+}
+
+export default function StepIndicator({ currentStep }: StepIndicatorProps) {
   return (
     <div className="flex items-center justify-center mb-8 mt-12">
       {[1, 2, 3, 4].map((step, index) => (

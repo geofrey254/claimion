@@ -1,7 +1,20 @@
 import React from "react";
 import { AlertCircle } from "lucide-react";
 
-export default function IncidentDetails({ formData, onInputChange }) {
+type IncidentDetailsProps = {
+  formData: {
+    incidentDate: string;
+    incidentTime: string;
+    location: string;
+    description: string;
+  };
+  onInputChange: (field: string, value: string) => void;
+};
+
+export default function IncidentDetails({
+  formData,
+  onInputChange,
+}: IncidentDetailsProps) {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">

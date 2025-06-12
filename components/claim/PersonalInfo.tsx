@@ -1,7 +1,21 @@
 import React from "react";
 import { User } from "lucide-react";
 
-export default function PersonalInfo({ formData, onInputChange }) {
+type PersonalInfoProps = {
+  formData: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    policyNumber: string;
+  };
+  onInputChange: (field: string, value: string) => void;
+};
+
+export default function PersonalInfo({
+  formData,
+  onInputChange,
+}: PersonalInfoProps) {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
@@ -9,7 +23,7 @@ export default function PersonalInfo({ formData, onInputChange }) {
         <h2 className="text-3xl font-bold text-[#0a4586] mb-2">
           Personal Information
         </h2>
-        <p className="text-gray-600">Let's start with your basic details</p>
+        <p className="text-gray-600">Let{"'"}s start with your basic details</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
