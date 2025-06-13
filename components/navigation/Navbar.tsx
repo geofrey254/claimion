@@ -293,7 +293,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-[#13589e] hover:text-[#f9463a] focus:outline-none"
+              className="text-[#13589e] hover:text-[#f9463a] focus:outline-none cursor-pointer"
               aria-label="Toggle menu"
             >
               {isOpen ? (

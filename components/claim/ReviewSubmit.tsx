@@ -143,8 +143,7 @@ export default function ReviewSubmit({
               </h4>
               <p className="text-blue-700 text-sm">
                 Your claim will be securely transmitted and processed by our AI
-                system. You{"'"}ll receive a confirmation email and claim number
-                within minutes.
+                system.
               </p>
             </div>
           </div>

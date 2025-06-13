@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Camera, Upload, Images, X, RotateCcw } from "lucide-react";
+import { Upload, Images, X, RotateCcw } from "lucide-react";
 import Image from "next/image";
 
 interface PhotoUploadProps {
@@ -52,10 +52,6 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({
     }
   };
 
-  const handleCameraCapture = () => {
-    fileInputRef.current?.click();
-  };
-
   return (
     <div className="bg-white rounded-2xl shadow-xl p-8">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
@@ -83,20 +79,10 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({
               <p className="text-lg font-medium mb-2">
                 Drag and drop your photo here
               </p>
-              <p className="text-sm text-gray-500">
-                or choose from the options below
-              </p>
+              <p className="text-sm text-gray-500">or upload a photo below</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <button
-                onClick={handleCameraCapture}
-                className="flex items-center justify-center bg-[#f9463a] hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <Camera className="w-5 h-5 mr-2" />
-                Take Photo
-              </button>
-
               <button
                 onClick={() => fileInputRef.current?.click()}
                 className="flex items-center justify-center bg-[#0a4586] hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
