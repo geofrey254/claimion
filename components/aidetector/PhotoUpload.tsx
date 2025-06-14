@@ -79,7 +79,7 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({
               <p className="text-lg font-medium mb-2">
                 Drag and drop your photo here
               </p>
-              <p className="text-sm text-gray-500">or upload a photo below</p>
+              <p className="text-sm text-gray-500">or upload a photo below!</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
