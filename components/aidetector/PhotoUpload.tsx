@@ -53,7 +53,7 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-[#0a4586] max-w-2xl">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
         Upload Vehicle Photo
       </h2>

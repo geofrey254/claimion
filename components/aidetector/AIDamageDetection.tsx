@@ -37,13 +37,33 @@ const AIDeamageDetectionPage = () => {
         setAnalysisResults({
           damageDetected: true,
           damageCount: 2,
-          confidence: 87,
+          confidence: 90,
           damages: [
             {
               type: "Front Bumper Scratch",
               description:
                 "Deep scratch on front bumper, approximately 8 inches long",
-              severity: "Medium",
+              severity: "Low",
+            },
+            {
+              type: "Headlight Crack",
+              description: "Crack in left headlight lens",
+              severity: "High",
+            },
+            {
+              type: "Headlight Crack",
+              description: "Crack in left headlight lens",
+              severity: "High",
+            },
+            {
+              type: "Headlight Crack",
+              description: "Crack in left headlight lens",
+              severity: "High",
+            },
+            {
+              type: "Headlight Crack",
+              description: "Crack in left headlight lens",
+              severity: "High",
             },
             {
               type: "Headlight Crack",
@@ -71,28 +91,26 @@ const AIDeamageDetectionPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <DamageDetectionHeader />
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-8">
-            <PhotoUpload
-              onPhotoSelect={handlePhotoSelect}
-              selectedPhoto={selectedPhoto}
-            />
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-3 gap-8">
+          <PhotoUpload
+            onPhotoSelect={handlePhotoSelect}
+            selectedPhoto={selectedPhoto}
+          />
 
-            <ActionButtons
-              hasResults={!!analysisResults}
-              onDownloadReport={handleDownloadReport}
-              onStartNew={handleStartNew}
-            />
-          </div>
+          <DamageAnalysis
+            isAnalyzing={isAnalyzing}
+            analysisResults={analysisResults}
+            onStartAnalysis={() => {}}
+          />
 
-          <div>
-            <DamageAnalysis
-              isAnalyzing={isAnalyzing}
-              analysisResults={analysisResults}
-              onStartAnalysis={() => {}}
-            />
-          </div>
+          <ActionButtons
+            hasResults={!!analysisResults}
+            onDownloadReport={handleDownloadReport}
+            onStartNew={handleStartNew}
+          />
+
+          <div></div>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import PricingSection from "@/components/homepage/Pricing";
 import FinalCTABanner from "@/components/homepage/CTA";
 export default function Home() {
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen ">
       <Hero />
       <Problem />
       <FeaturesGrid />

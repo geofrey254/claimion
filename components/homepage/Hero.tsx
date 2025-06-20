@@ -12,7 +12,7 @@ function Hero() {
         <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-white/15 blur-lg"></div>
       </div>
 
-      <div className="max-w-6xl w-full text-white overflow-hidden relative z-10">
+      <div className="max-w-6xl 2xl:max-w-7xl w-full text-white overflow-hidden relative z-10">
         <div className="p-8 md:p-0 flex flex-col md:flex-row items-center gap-12">
           {/* Left Content */}
           <div className="flex-1 text-center md:text-left">
@@ -27,7 +27,7 @@ function Hero() {
                 <span className="block bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
                   Vehicle Damage
                 </span>
-                <span className="block text-[#f9463a]">Reporting</span>
+                <span className="block text-[#f9463a]">Assessment</span>
               </h1>
             </div>
 

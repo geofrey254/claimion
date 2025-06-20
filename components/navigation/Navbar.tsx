@@ -100,7 +100,7 @@ const Navbar = () => {
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
                     <Link
-                      href="/features/ai-damage-detection"
+                      href="/ai-detector"
                       className="flex gap-4 items-center text-[#0a4586] hover:text-[#f9463a] transition-colors font-semibold mb-2"
                     >
                       <FaCarCrash size={30} className="text-[#0a4586]" />
@@ -330,7 +330,7 @@ const Navbar = () => {
               {mobileFeaturesOpen && (
                 <div className="bg-gray-50 rounded-md mt-1 ml-6 border-l-2 border-[#13589e] transition-all duration-200">
                   <Link
-                    href="/features/ai-damage-detection"
+                    href="/ai-detector"
                     className="text-[#0a4586] hover:bg-gray-100 hover:text-[#f9463a] px-4 py-3 rounded-md text-sm flex items-center gap-3 transition-colors"
                     onClick={closeMobileMenu}
                   >
